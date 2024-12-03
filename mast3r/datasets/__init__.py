@@ -12,7 +12,7 @@ from dust3r.datasets.scannetpp import ScanNetpp as DUSt3R_ScanNetpp  # noqa
 from dust3r.datasets.staticthings3d import StaticThings3D as DUSt3R_StaticThings3D  # noqa
 from dust3r.datasets.waymo import Waymo as DUSt3R_Waymo  # noqa
 from dust3r.datasets.wildrgbd import WildRGBD as DUSt3R_WildRGBD  # noqa
-
+from dust3r.datasets.underwatetr import UnderWaterDataset as DUSt3R_UnderWater
 
 class ARKitScenes(DUSt3R_ARKitScenes, MASt3RBaseStereoViewDataset):
     def __init__(self, *args, split, ROOT, **kwargs):
@@ -27,6 +27,11 @@ class BlendedMVS(DUSt3R_BlendedMVS, MASt3RBaseStereoViewDataset):
 
 
 class Co3d(DUSt3R_Co3d, MASt3RBaseStereoViewDataset):
+    def __init__(self, mask_bg=True, *args, ROOT, **kwargs):
+        super().__init__(mask_bg, *args, ROOT=ROOT, **kwargs)
+        self.is_metric_scale = False
+
+class UnderWaterDataset(DUSt3R_UnderWater, MASt3RBaseStereoViewDataset):
     def __init__(self, mask_bg=True, *args, ROOT, **kwargs):
         super().__init__(mask_bg, *args, ROOT=ROOT, **kwargs)
         self.is_metric_scale = False
