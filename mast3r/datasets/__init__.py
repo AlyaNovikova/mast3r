@@ -31,7 +31,7 @@ class Co3d(DUSt3R_Co3d, MASt3RBaseStereoViewDataset):
         super().__init__(mask_bg, *args, ROOT=ROOT, **kwargs)
         self.is_metric_scale = False
 
-class UnderWaterDataset(DUSt3R_UnderWater, MASt3RBaseStereoViewDataset):
+class UnderWater(DUSt3R_UnderWater, MASt3RBaseStereoViewDataset):
     def __init__(self, mask_bg=True, *args, ROOT, **kwargs):
         super().__init__(mask_bg, *args, ROOT=ROOT, **kwargs)
         self.is_metric_scale = False
