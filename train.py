@@ -7,7 +7,7 @@
 # --------------------------------------------------------
 from mast3r.model import AsymmetricMASt3R
 from mast3r.losses import ConfMatchingLoss, MatchingLoss, APLoss, Regr3D, InfoNCE, Regr3D_ScaleShiftInv
-from mast3r.datasets import ARKitScenes, BlendedMVS, Co3d, MegaDepth, ScanNetpp, StaticThings3D, Waymo, WildRGBD
+from mast3r.datasets import ARKitScenes, BlendedMVS, Co3d, MegaDepth, ScanNetpp, StaticThings3D, Waymo, WildRGBD, UnderWater
 
 import mast3r.utils.path_to_dust3r  # noqa
 # add mast3r classes to dust3r imports
