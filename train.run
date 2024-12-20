@@ -20,4 +20,4 @@ python /home/novikova/coral/forked_mast3r/train.py    \
 --pretrained "/home/novikova/coral/forked_mast3r/checkpoints/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth"  \
 --lr 0.0001 --min_lr 1e-06 --warmup_epochs 10 --epochs 300 --batch_size 4 --accum_iter 4   \
 --save_freq 1 --keep_freq 5 --eval_freq 1 --disable_cudnn_benchmark    \
---output_dir "mast3r_checkpoints/mast3r_underwater_from_mast3r_checkpoint_bs_4_with_checkpoint_300epochs_pairs"
+--output_dir "mast3r_checkpoints/mast3r_underwater_from_mast3r_checkpoint_bs_4_with_checkpoint_300epochs_pairs_dec20"
