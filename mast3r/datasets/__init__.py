@@ -13,6 +13,7 @@ from dust3r.datasets.staticthings3d import StaticThings3D as DUSt3R_StaticThings
 from dust3r.datasets.waymo import Waymo as DUSt3R_Waymo  # noqa
 from dust3r.datasets.wildrgbd import WildRGBD as DUSt3R_WildRGBD  # noqa
 from dust3r.datasets.underwater import UnderWaterDataset as DUSt3R_UnderWater
+from dust3r.datasets.big_underwater import MergedUnderWaterDataset as DUSt3R_MergedUnderWater
 
 class ARKitScenes(DUSt3R_ARKitScenes, MASt3RBaseStereoViewDataset):
     def __init__(self, *args, split, ROOT, **kwargs):
@@ -34,6 +35,11 @@ class Co3d(DUSt3R_Co3d, MASt3RBaseStereoViewDataset):
 class UnderWaterDataset(DUSt3R_UnderWater, MASt3RBaseStereoViewDataset):
     def __init__(self, *args, split, ROOT, **kwargs):
         super().__init__(*args, split=split, ROOT=ROOT, **kwargs)
+        self.is_metric_scale = False
+
+class MergedUnderWaterDataset(DUSt3R_MergedUnderWater, MASt3RBaseStereoViewDataset):
+    def __init__(self, mask_bg=True, *args, ROOT, **kwargs):
+        super().__init__(mask_bg, *args, ROOT=ROOT, **kwargs)
         self.is_metric_scale = False
 
 
