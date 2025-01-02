@@ -18,6 +18,6 @@ python /home/novikova/coral/forked_mast3r/train.py    \
 --train_criterion "ConfLoss(Regr3D(L21, norm_mode='?avg_dis'), alpha=0.2) + 0.075*ConfMatchingLoss(MatchingLoss(InfoNCE(mode='proper', temperature=0.05), negatives_padding=0, blocksize=8192), alpha=10.0, confmode='mean')"   \
 --test_criterion "Regr3D_ScaleShiftInv(L21, norm_mode='?avg_dis', gt_scale=True, sky_loss_value=0) + -1.*MatchingLoss(APLoss(nq='torch', fp=torch.float16), negatives_padding=12288)"   \
 --pretrained "/home/novikova/coral/dust3r/checkpoints/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth"  \
---lr 0.0001 --min_lr 1e-06 --warmup_epochs 10 --epochs 300 --batch_size 4 --accum_iter 4   \
+--lr 0.0001 --min_lr 1e-06 --warmup_epochs 5 --epochs 50 --batch_size 4 --accum_iter 4   \
 --save_freq 1 --keep_freq 5 --eval_freq 1 --disable_cudnn_benchmark    \
---output_dir "mast3r_checkpoints/new_mast3r_big_underwater_from_mast3r_checkpoint_bs_4_with_checkpoint_300epochs_pairs_30perimg_step5"
+--output_dir "mast3r_checkpoints/new_check_mast3r_big_underwater_from_mast3r_checkpoint_bs_4_with_checkpoint_300epochs_pairs_30perimg_step5"
